@@ -16,9 +16,19 @@
     <title>Fazer sistema</title>
 
     <style>
+       .navbar-brand {
+            font-size: 25px;
+            color: #1693a5;
+            font-weight: bolder;
+        }
+
+        .navbar-brand:hover {
+            color: #7ececa;
+        }
+
         /* CSS customizado */
         body {
-            background-color: #f8f9fa;
+            background-color:#f3f3f3;
         }
 
         /* Formulário centralizado com espaçamento adequado */
@@ -55,55 +65,38 @@
         .btn:hover {
             background-color: #8eb3db;
         }
-
-        /* Navbar responsiva com quebra para telas menores */
-        .navbar {
-            background-color: #e0e0e0;
-        }
-        .navbar-custom {
-             background-color: #ffffff; /* Cor personalizada */
-        }
-        .navbar-brand{
-            color: aqua;
-        }
     </style>
 </head>
 
 <body>
     <!-- Navbar responsiva -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- Aqui é a cor padrão do Bootstrap -->
         <div class="container-fluid">
-          <a class="navbar-brand">SY SALE</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="carreagamento9.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">Opções</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="carregamento4.html">Sistema</a></li>
-                  <li><a class="dropdown-item" href="carreagamento3.html">Relatar problemas</a></li>
-                  <li><a class="dropdown-item" href="carregamento5.html">Faça aqui seu sistema</a></li>
-                  <li><a class="dropdown-item" href="carregamento6.html">Acessebilidade</a></li>
-                  <li><a class="dropdown-item" href="carregamento8.html">Banco de dados</a></li>
+            <a class="navbar-brand">SY SALE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="sign.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                          aria-expanded="false">Opções</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="carregamento4.html">Sistema</a></li>
+                          <li><a class="dropdown-item" href="carreagamento3.html">Relatar problemas</a></li>
+                          <li><a class="dropdown-item" href="carregamento5.html">Faça aqui seu sistema</a></li>
+                          <li><a class="dropdown-item" href="carregamento6.html">Acessebilidade</a></li>
+                          <li><a class="dropdown-item" href="carregamento8.html">Banco de dados</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="sign.html">Crie uma Conta</a>
-              </li>
-            </ul>
-        
-    
-          </div>
+            </div>
         </div>
-      </nav>
-
+    </nav>
     <div class="container">
         <div class="form-container">
             <form action="#" method="post" enctype="multipart/form-data">

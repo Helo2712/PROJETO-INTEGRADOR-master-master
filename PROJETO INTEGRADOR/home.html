@@ -12,9 +12,35 @@
   <link rel="shortcut icon" href="img/favicon-16x16_outro.png" type="image/x-icon" />
   <title>Home</title>
 
+  <script>
+    function buscar() {
+      const query = document.getElementById('buscaInput').value;
+      const resultadosDiv = document.getElementById('resultados');
 
+      if (query.trim() === "") {
+        resultadosDiv.innerHTML = "Por favor, insira um termo para busca.";
+        return;
+      }
+
+      // Criar objeto XMLHttpRequest para requisição AJAX
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "buscar.php?query=" + encodeURIComponent(query), true);
+
+      // Configurar o evento para processar a resposta
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          resultadosDiv.innerHTML = xhr.responseText; // Atualizar a página com os resultados
+        }
+      };
+
+      xhr.send(); // Enviar a solicitação
+    }
+  </script>
   <style type="text/css">
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+
+ 
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -219,9 +245,9 @@
         </ul>
        <!-- Barra de Pesquisa em HTML -->
        <form class="d-flex" role="search" method="get" action="processar_pesquisa.php">
-        <input class="form-control me-2" type="search" placeholder="Digite para buscar" aria-label="Search" name="query">
+        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="query">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
+      </form>
     <div id="resultado" class="mt-4">
       <!-- Os resultados da busca serão exibidos aqui -->
   </div>
@@ -344,7 +370,7 @@
       </ul>
   </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
