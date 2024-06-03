@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start the session
+
+if (!isset($_SESSION['username'])) {
+    header('Location: sign.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +16,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"></script>
 
   <link rel="shortcut icon" href="img/favicon-16x16_outro.png" type="image/x-icon" />
   <title>Home</title>
@@ -229,7 +240,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="sign.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="sign.php">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -243,29 +254,26 @@
             </ul>
           </li>
         </ul>
-       <!-- Barra de Pesquisa em HTML -->
-       <form class="d-flex" role="search" method="get" action="processar_pesquisa.php">
-        <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Buscar" name="query">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-    <div id="resultado" class="mt-4">
-      <!-- Os resultados da busca serão exibidos aqui -->
-  </div>
-
-
       </div>
     </div>
   </nav>
 
   <br>
-
+  <br>
   <div class="container homeContainer">
 
     <div class="row">
       <div class="col-12">
-        <h6 class="display-6"><i class="bi bi-house-door"></i>Home</h6>
+        <h6 class="display-6"><i class="bi bi-house-door"></i>Bem-vindo(a),<span class="navbar-text ms-auto">
+                    <?php
+                    if (isset($_GET['username'])) {
+                        echo htmlspecialchars($_GET['username']) . "!";
+                    }
+                    ?>
+                </span></h6>
       </div>
     </div>
+
 
     <div class="row gap-0 row-gap-4">
 
@@ -318,7 +326,7 @@
           <div class="card-body alturaCardsHome">
             <h5 class="card-title">Funcionalidade do Sistema</h5>
             <p class="card-text">Veja como anda a funcinalidade do seu Sistema</p><br>
-            <a href="carregamento4.html" class="btn btn-danger">Ver mais</a>
+            <a href="forms_validacao_usuario_sitema.html" class="btn btn-danger">Ver mais</a>
           </div>
 
         </div>
@@ -361,12 +369,10 @@
 
 <footer class="footer">
   <div class="container">
-      <p>&copy; 2024 - Nome da Empresa. Todos os direitos reservados.</p>
+      <p>&copy; 2024 - SY SALE. Todos os direitos reservados.</p>
       <ul class="footer-links">
-          <li><a href="#sobre-nos">Sobre Nós</a></li>
+          <li><a href="sobrenos.html">Sobre Nós</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li><a href="#privacidade">Política de Privacidade</a></li>
-          <li><a href="#termos">Termos de Serviço</a></li>
       </ul>
   </div>
 </footer>
